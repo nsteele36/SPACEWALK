@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Android</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/road.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/road2.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/square.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/road3.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/square2.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/road4.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/road5.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/rectangle.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/road6.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/Time.spritefont</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/spaceplatform1.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/spaceplatform2.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/SpaceBackground1.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/space-2.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/Astronaut.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/drone.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/spaceplatform.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/crashsound.wav</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/crouchsound.wav</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/jumpsound.wav</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/levelupring.wav</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/obstaclepassedring.wav</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/8bitletters.spritefont</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/alien2.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/alien3.png</File>
+    <File>C:/Users/Nick Steele/Documents/TxBDC/SPACEWALK/SPACEWALK/Content/space-1.png</File>
+  </SourceFiles>
+</SourceFileCollection>
