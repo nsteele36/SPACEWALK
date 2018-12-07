@@ -8,6 +8,7 @@ using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Dynamics;
 using System;
 using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 namespace SPACEWALK
 {
@@ -67,6 +68,7 @@ namespace SPACEWALK
         private SoundEffect crashSound;
         private SoundEffect obstaclePassedSound;
         private SoundEffect levelUpSound;
+        private Song music;
 
         public Game1()
         {
@@ -95,6 +97,8 @@ namespace SPACEWALK
             crashSound = Content.Load<SoundEffect>("crashsound");
             obstaclePassedSound = Content.Load<SoundEffect>("obstaclepassedring");
             levelUpSound = Content.Load<SoundEffect>("levelupring");
+            music = Content.Load<Song>("spacewalktheme");
+            playMusic();
 
             //SCROLLING
             scrolling1 = new Scrolling(Content.Load<Texture2D>("space-2"), new Rectangle(0, 0, 2000, 2000));
@@ -108,6 +112,14 @@ namespace SPACEWALK
             // TODO: Unload any non ContentManager content here
         }
 
+        protected void playMusic()
+        {
+            //SOUND
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = 0.7f;
+            MediaPlayer.Play(music);
+        }
+
         protected override void Update(GameTime gameTime)
         {
             if ((Keyboard.GetState().IsKeyDown(Keys.R) || _player.getPuckData2() > 500) && _player.getIsCrashed())
@@ -117,9 +129,11 @@ namespace SPACEWALK
             //if (!_player.crashed && _player.isMoving)
             if (!_player.getIsCrashed() && _player.getIsMoving())
             {
+                //GET TIME AND SCORE
                 totalTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 _player.setScore(_player.getScore() + (float)gameTime.ElapsedGameTime.TotalSeconds * 1000);
 
+                //UPDATE PLAYER CAMERA
                 updateCamera();
 
                 //BACKGROUND
@@ -167,7 +181,7 @@ namespace SPACEWALK
 
             if (_player.getIsCrashed() && !_player.getCrashSoundPlayed())
             {
-                crashSound.Play();
+                crashSound.Play(0.7f, 0f, 0f);
                 _player.setCrashSoundPlayed(true);
             }
 
@@ -218,6 +232,11 @@ namespace SPACEWALK
 
             spriteBatch.DrawString(font, "Score: " + (int)_player.getScore(), new Vector2(50, 80), Color.White);
 
+            if(!_player.getIsMoving() && !_player.getIsCrashed())
+            {
+                spriteBatch.DrawString(font, "                         CONTROLS\n1. Press blue puck to jump.\n2. Press yellow puck to crouch.\n3.Press both pucks at the same time to start", new Vector2(500, 750 / 2), Color.Yellow);
+            }
+
             if (_player.getIsOutOfBounds())
                 spriteBatch.DrawString(font, "                        OUT OF BOUNDS!\n\n\n\n\n\n\nPress both pucks at the same time to restart", new Vector2(500, 750 / 2), Color.Red);
             else if (_player.getIsCrashed())
@@ -227,7 +246,7 @@ namespace SPACEWALK
                 spriteBatch.DrawString(font, "Enemy Passed! +500", new Vector2(50, 20), Color.Yellow);
 
             if (_player.getLevelUp() && _player.getLevelUptimer() < (float)gameTime.TotalGameTime.TotalSeconds)
-                spriteBatch.DrawString(font, "   LEVEL UP!\nSpeed Increased", new Vector2(800, 40), Color.Yellow);
+                spriteBatch.DrawString(font, "     LEVEL UP!\nSpeed Increased", new Vector2(800, 40), Color.Yellow);
 
             spriteBatch.End();
 

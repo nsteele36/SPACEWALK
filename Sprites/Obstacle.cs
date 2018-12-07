@@ -63,7 +63,7 @@ namespace SPACEWALK.Sprites
                             _player.setScore(_player.getScore() + 500f);
                             _player.setIsPassed(true);
                             _player.setPassedTime((float)gameTime.TotalGameTime.TotalSeconds);
-                            obstaclePassedSound.Play();
+                            obstaclePassedSound.Play(0.7f, 0f, 0f);
                         }
                     }
                 }
@@ -101,14 +101,14 @@ namespace SPACEWALK.Sprites
                     //if ((i == 4 || i == 8) && isJumpingObs)
                     //    AddObstacle(obs, new Vector2(road[i].body.Position.X / 2, road[0].body.Position.Y + 2.5f), world);
                     if ((i == 2 || i == 6) && !isJumpingObs)
-                        AddObstacle(obs, new Vector2(road[i].getBody().Position.X / 2 + 300f, road[0].getBody().Position.Y + 4.5f), world, isJumpingObs);
+                        AddObstacle(obs, new Vector2(road[i].getBody().Position.X / 2 + 310f, road[0].getBody().Position.Y + 4.5f), world, isJumpingObs);
                 }
                 else
                 {
                     //if ((i == 3 || i == 7) && !isJumpingObs)
                     //    AddObstacle(obs, new Vector2(road[i].body.Position.X / 2, road[0].body.Position.Y + 4.5f), world);
                     if ((i == 5 || i == 9) && isJumpingObs)
-                        AddObstacle(obs, new Vector2(road[i].getBody().Position.X / 2 + 100f, road[0].getBody().Position.Y + 2.5f), world, isJumpingObs);
+                        AddObstacle(obs, new Vector2(road[i].getBody().Position.X / 2 + 110f, road[0].getBody().Position.Y + 3f), world, isJumpingObs);
                 }
             }
             return obs;

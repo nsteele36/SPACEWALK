@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using tainicom.Aether.Physics2D.Dynamics;
-using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using FitMiAndroid;
 using System.Collections.Generic;
@@ -22,7 +21,7 @@ namespace SPACEWALK.Sprites
         private bool isOutOfBounds = false;
         private bool isLevelUp = false;
 
-        public float current_vel = 25f;
+        public float current_vel = 22f;
         private float crouchTimer = 2;
         private float jumpTimer = 2;
         private float levelUpTimer = 0f;
@@ -72,7 +71,6 @@ namespace SPACEWALK.Sprites
         public int getCurrentRoad() { return currentRoad; }
         public int getObstaclesPassed() { return obstaclesPassed; }
         public float getPassedTime() { return passedTime; }
-        public float getCrashedTime() { return crashedTime; }
         public float getPuckData2() { return puckData2; }
         public float getScore() { return score; }
         public float getLevelUptimer() { return levelUpTimer; }
@@ -126,7 +124,7 @@ namespace SPACEWALK.Sprites
             else
                 isOnRoad = true;
 
-            if (getWorld().ContactCount > 2)
+            if (getWorld().ContactCount > 3)
             {
                 getBody().FixedRotation = false;
                 crashed = true;
@@ -145,9 +143,7 @@ namespace SPACEWALK.Sprites
 
             if (obstaclesPassed % 6 == 0 && obstaclesPassed != 0 && !isLevelUp)
             {
-                SoundEffectInstance levelUpS = levelUpSound.CreateInstance();
-                levelUpS.IsLooped = false;
-                levelUpS.Play();
+                levelUpSound.Play(0.7f, 0f, 0f);
                 current_vel += 2f;
                 getBody().LinearVelocity = new Vector2(current_vel, 0);
                 isLevelUp = true;
@@ -207,7 +203,7 @@ namespace SPACEWALK.Sprites
             jumpTimer = 0;
             jumpCounter++;
             numOfJumps++;
-            jumpSound.Play();
+            jumpSound.Play(0.7f, 0f, 0f);
         }
 
         //CREATE CROUCH HITBOX 
@@ -231,7 +227,7 @@ namespace SPACEWALK.Sprites
             isCrouching = true;
             crouchTimer = 0;
             numOfCrouches++;
-            crouchSound.Play();
+            crouchSound.Play(0.7f, 0f, 0f);
         }
 
         //CREATE STANDING HITBOX
